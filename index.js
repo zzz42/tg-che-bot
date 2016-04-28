@@ -1,13 +1,6 @@
-const TelegramBot = require('node-telegram-bot-api');
+'use strict';
 
 const config = require('./config.json');
+const logger = require('./lib/logger')(config);
 
-// Setup polling way
-const bot = new TelegramBot(config.token, {polling: true});
-
-// Matches /echo [whatever]
-bot.onText(/\/echo (.+)/, function (msg, match) {
-  let fromId = msg.from.id;
-  let resp = match[1];
-  bot.sendMessage(fromId, resp);
-});
+require('./lib/bot')(config, logger);
