@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/zzz42/tg-che-bot#readme",
   "dependencies": {
-    "node-telegram-bot-api": "^0.21.1"
+    "node-telegram-bot-api": "git://github.com/zzz42/node-telegram-bot-api"
   }
 }
